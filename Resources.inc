@@ -52,13 +52,13 @@ rcp_sizeof_unpackedRect dd 0.03125 ;0.5/sizeof_unpackedRect;
 maxrate                 dd 2147483647.0
 MainDlg:                DLGTEMPLATEEX 0,0,DS_SETFONT+DS_MODALFRAME+DS_CENTER+WS_POPUP+WS_CAPTION+WS_SYSMENU,8,0,0,132,60,0,'',9,FW_NORMAL,0,0,'Tahoma'
                         ;encoding macro don`t work here. I don`t know why. So I define unicode-string by hand.
-                        EDIT_CAPTIONS equ 0428h,0438h,0440h,0438h,043Dh,0430h,000Dh,000Ah,000Dh,000Ah,0412h,044Bh,0441h,043Eh,0442h,0430h,000Dh,000Ah,000Dh,000Ah,041Eh,0442h,0441h,0442h,0443h,043Fh;'Ширина',13,10,13,10,'Высота',13,10,13,10,'Отступ'
+                        EDIT_CAPTIONS equ 0428h,0438h,0440h,0438h,043Dh,0430h,000Dh,000Ah,000Dh,000Ah,0412h,044Bh,0441h,043Eh,0442h,0430h,000Dh,000Ah,000Dh,000Ah,041Eh,0442h,0441h,0442h,0443h,043Fh;'Largura',13,10,13,10,'Altura',13,10,13,10,'Entre Objetos'
                         DLGITEMTEMPLATEEX 0,0,SS_LEFT+WS_CHILD+WS_VISIBLE                               ,2 ,2 ,30 ,40,0,'STATIC',EDIT_CAPTIONS
-                        DLGITEMTEMPLATEEX 0,0,ES_LEFT+ES_NUMBER+WS_CHILD+WS_VISIBLE+WS_BORDER+WS_TABSTOP,36,1 ,25 ,12,1,'EDIT','1200'
-                        DLGITEMTEMPLATEEX 0,0,ES_LEFT+ES_NUMBER+WS_CHILD+WS_VISIBLE+WS_BORDER+WS_TABSTOP,36,16,25 ,12,2,'EDIT','2400'
+                        DLGITEMTEMPLATEEX 0,0,ES_LEFT+ES_NUMBER+WS_CHILD+WS_VISIBLE+WS_BORDER+WS_TABSTOP,36,1 ,25 ,12,1,'EDIT','320'
+                        DLGITEMTEMPLATEEX 0,0,ES_LEFT+ES_NUMBER+WS_CHILD+WS_VISIBLE+WS_BORDER+WS_TABSTOP,36,16,25 ,12,2,'EDIT','470'
                         DLGITEMTEMPLATEEX 0,0,ES_LEFT+ES_NUMBER+WS_CHILD+WS_VISIBLE+WS_BORDER+WS_TABSTOP,36,32,25 ,12,3,'EDIT','0'
-                        DLGITEMTEMPLATEEX 0,0,BS_AUTOCHECKBOX+WS_CHILD+WS_VISIBLE+WS_TABSTOP            ,67,1 ,62 ,12,4,'BUTTON','Перемешать'
-                        DLGITEMTEMPLATEEX 0,0,BS_AUTOCHECKBOX+WS_CHILD+WS_VISIBLE+WS_TABSTOP            ,67,16,62 ,12,5,'BUTTON','Добавить рамку'
+                        DLGITEMTEMPLATEEX 0,0,BS_AUTOCHECKBOX+WS_CHILD+WS_VISIBLE+WS_TABSTOP            ,67,1 ,62 ,12,4,'BUTTON','Ordem AleatГіria'
+                        DLGITEMTEMPLATEEX 0,0,BS_AUTOCHECKBOX+WS_CHILD+WS_VISIBLE+WS_TABSTOP            ,67,16,62 ,12,5,'BUTTON','Adicionar Contorno'
                         DLGITEMTEMPLATEEX 0,0,BS_DEFPUSHBUTTON+WS_CHILD+WS_VISIBLE+WS_TABSTOP           ,70,33,50 ,11,6,'BUTTON','&OK'
                         DLGITEMTEMPLATEEX 0,0,WS_VISIBLE+WS_CHILD                                       ,2 ,48,128,10,7,'msctls_progress32',''
                         dd sizeof.strDirectEnpack-2
@@ -67,9 +67,9 @@ sizeof.strDirectEnpack=$-strDirectEnpack
                         dd 16
 strStandard             du 'Standard',0
                         dd 42
-strButtonCaption        du 'Прямоугольный раскрой',0
-errCPUNotSupported      du 'Процессор не поддерживается. Требуется SSE 4.1.',0
-fmt                     du '%u/%u, высота %u мм',0
+strButtonCaption        du 'ГЏГ°ГїГ¬Г®ГіГЈГ®Г«ГјГ­Г»Г© Г°Г Г±ГЄГ°Г®Г©',0
+errCPUNotSupported      du 'ГЏГ°Г®Г¶ГҐГ±Г±Г®Г° Г­ГҐ ГЇГ®Г¤Г¤ГҐГ°Г¦ГЁГўГ ГҐГІГ±Гї. Г’Г°ГҐГЎГіГҐГІГ±Гї SSE 4.1.',0
+fmt                     du '%u/%u, ГўГ»Г±Г®ГІГ  %u Г¬Г¬',0
 ICOData                 file 'icon.ico'
 sizeof.ICOData=$-ICOData
 BMPData                 file 'icon.bmp'
